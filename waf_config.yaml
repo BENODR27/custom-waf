@@ -1,51 +1,53 @@
+# WAF configuration - patterns are regular expressions (case-insensitive)
 patterns:
   sql_injection:
-    - "' OR '1'='1"
-    - "UNION SELECT"
-    - "SELECT .* FROM"
+    - "(?:')\\s*OR\\s*'1'\\s*=\\s*'1" # classic tautology
+    - "UNION\\s+SELECT"
+    - "SELECT\\s+.+\\s+FROM"
   xss:
-    - "<script.*?>"
-    - "onerror="
-    - "javascript:"
+    - "<script\\b[^>]*>.*?</script>" # script tags
+    - "\\bonerror\\s*=" # onerror attributes
+    - "javascript:" # javascript: URI usage
   code_injection:
-    - "eval\\("
-    - "exec\\("
+    - "\\beval\\s*\\(" # eval(
+    - "\\bexec\\s*\\(" # exec(
   os_command_injection:
-    - "&&"
-    - ";"
-    - "|"
+    - '(?:\b(exec|system|popen)\b\s*\()' # only function calls in payloads
+    - '(?:;|\&\&|\|){2,}' # matches repeated command chaining
   crlf_injection:
-    - "%0d%0a"
+    - "%0d%0a" # encoded CRLF
   ldap_injection:
-    - "(&(objectClass=*))"
+    - "\\(&\\(objectClass=\\*\\)\\)" # LDAP wildcard injection pattern
   xpath_injection:
-    - "count(//"
+    - "count\\s*\\(//" # XPath count(//
   rce:
-    - "import os"
-    - "subprocess"
+    - "\\bimport\\s+os\\b"
+    - "\\bsubprocess\\b"
   xxe:
-    - "<!DOCTYPE"
-    - "<!ENTITY"
+    - "<!DOCTYPE\\s"
+    - "<!ENTITY\\s"
   ssrf:
-    - "http://127.0.0.1"
+    - "http://127\\.0\\.0\\.1"
     - "file://"
   path_traversal:
-    - "\\.\\./"
+    - "\\.\\./" # ../
     - "/etc/passwd"
   backdoor:
-    - "cmd="
-    - "shell="
+    - "\\bcmd\\s*=\\b"
+    - "\\bshell\\s*=\\b"
   bruteforce:
     - "login_attempt"
   http_flood:
     - "massive_request"
   bot_abuse:
-    - "User-Agent: python-requests"
+    - "User-Agent:\\s*python-requests"
 
+# IP addresses to always block (strings)
 ip_blacklist:
   - "192.168.1.100"
   - "10.0.0.5"
 
+# Rate limiting: limit requests per `window` seconds per IP
 rate_limit:
   limit: 100
   window: 60
