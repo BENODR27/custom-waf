@@ -1,4 +1,4 @@
-# IronBarrier WAF
+# IronBarrier WAF V 1.0
 
 A web application firewall helps protect web apps by filtering and monitoring HTTP traffic between a web application and the Internet
 
