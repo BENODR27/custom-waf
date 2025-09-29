@@ -23,3 +23,91 @@
 2025-09-29 11:57:34,353 [INFO] Incoming request from 192.168.22.115 GET http://192.168.22.115:8090/search?q=<script>alert("XSS")</script>
 2025-09-29 11:57:34,353 [WARNING] Blocked request (query) ip=192.168.22.115 key=q category=xss value=<script>alert("XSS")</script>
 2025-09-29 11:57:34,353 [INFO] 192.168.22.115 - - [29/Sep/2025 11:57:34] "[31m[1mGET /search?q=<script>alert("XSS")</script> HTTP/1.1[0m" 403 -
+2025-09-29 11:59:48,719 [INFO] Config loaded. categories=15, blacklisted_ips=2, rate_limit=100/60s
+2025-09-29 11:59:48,730 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8090
+ * Running on http://192.168.22.115:8090
+2025-09-29 11:59:48,730 [INFO] [33mPress CTRL+C to quit[0m
+2025-09-29 11:59:52,804 [INFO] Incoming request from 127.0.0.1 GET http://127.0.0.1:8090/health
+2025-09-29 11:59:52,804 [INFO] 127.0.0.1 - - [29/Sep/2025 11:59:52] "GET /health HTTP/1.1" 200 -
+2025-09-29 11:59:52,813 [INFO] Incoming request from 127.0.0.1 GET http://127.0.0.1:8090/
+2025-09-29 11:59:52,813 [INFO] 127.0.0.1 - - [29/Sep/2025 11:59:52] "GET / HTTP/1.1" 200 -
+2025-09-29 11:59:52,815 [INFO] Incoming request from 127.0.0.1 POST http://127.0.0.1:8090/reload-config
+2025-09-29 11:59:52,815 [INFO] Config loaded. categories=15, blacklisted_ips=2, rate_limit=100/60s
+2025-09-29 11:59:52,815 [INFO] 127.0.0.1 - - [29/Sep/2025 11:59:52] "POST /reload-config HTTP/1.1" 200 -
+2025-09-29 11:59:52,818 [INFO] Incoming request from 127.0.0.1 GET http://127.0.0.1:8090/?q=<script>alert(1)</script>
+2025-09-29 11:59:52,818 [WARNING] Blocked request (query) ip=127.0.0.1 key=q category=xss value=<script>alert(1)</script>
+2025-09-29 11:59:52,818 [INFO] 127.0.0.1 - - [29/Sep/2025 11:59:52] "[31m[1mGET /?q=<script>alert(1)</script> HTTP/1.1[0m" 403 -
+2025-09-29 11:59:52,818 [INFO] Incoming request from 127.0.0.1 GET http://127.0.0.1:8090/?q=UNION%20SELECT
+2025-09-29 11:59:52,818 [WARNING] Blocked request (query) ip=127.0.0.1 key=q category=sql_injection value=UNION SELECT
+2025-09-29 11:59:52,818 [INFO] 127.0.0.1 - - [29/Sep/2025 11:59:52] "[31m[1mGET /?q=UNION%20SELECT HTTP/1.1[0m" 403 -
+2025-09-29 11:59:52,818 [INFO] Incoming request from 127.0.0.1 POST http://127.0.0.1:8090/submit
+2025-09-29 11:59:52,818 [WARNING] Blocked request (form) ip=127.0.0.1 key=comment category=xss value=<img src=x onerror=alert(1)>
+2025-09-29 11:59:52,818 [INFO] 127.0.0.1 - - [29/Sep/2025 11:59:52] "[31m[1mPOST /submit HTTP/1.1[0m" 403 -
+2025-09-29 11:59:52,818 [INFO] Incoming request from 127.0.0.1 GET http://127.0.0.1:8090/
+2025-09-29 11:59:52,818 [WARNING] Blocked request (header) ip=127.0.0.1 header=X-Test category=xss
+2025-09-29 11:59:52,818 [INFO] 127.0.0.1 - - [29/Sep/2025 11:59:52] "[31m[1mGET / HTTP/1.1[0m" 403 -
+2025-09-29 11:59:52,827 [INFO] Incoming request from 127.0.0.1 POST http://127.0.0.1:8090/api
+2025-09-29 11:59:52,827 [WARNING] Blocked request (body) ip=127.0.0.1 category=xss
+2025-09-29 11:59:52,827 [INFO] 127.0.0.1 - - [29/Sep/2025 11:59:52] "[31m[1mPOST /api HTTP/1.1[0m" 403 -
+2025-09-29 11:59:52,830 [INFO] Incoming request from 192.168.1.100 GET http://127.0.0.1:8090/health
+2025-09-29 11:59:52,830 [WARNING] Blocked blacklisted IP: 192.168.1.100
+2025-09-29 11:59:52,830 [INFO] 127.0.0.1 - - [29/Sep/2025 11:59:52] "[31m[1mGET /health HTTP/1.1[0m" 403 -
+2025-09-29 11:59:52,833 [INFO] Incoming request from 1.2.3.4 GET http://127.0.0.1:8090/health
+2025-09-29 11:59:52,833 [INFO] 127.0.0.1 - - [29/Sep/2025 11:59:52] "GET /health HTTP/1.1" 200 -
+2025-09-29 11:59:52,935 [INFO] Incoming request from 1.2.3.4 GET http://127.0.0.1:8090/health
+2025-09-29 11:59:52,935 [INFO] 127.0.0.1 - - [29/Sep/2025 11:59:52] "GET /health HTTP/1.1" 200 -
+2025-09-29 11:59:53,046 [INFO] Incoming request from 1.2.3.4 GET http://127.0.0.1:8090/health
+2025-09-29 11:59:53,046 [INFO] 127.0.0.1 - - [29/Sep/2025 11:59:53] "GET /health HTTP/1.1" 200 -
+2025-09-29 11:59:53,148 [INFO] Incoming request from 1.2.3.4 GET http://127.0.0.1:8090/health
+2025-09-29 11:59:53,148 [INFO] 127.0.0.1 - - [29/Sep/2025 11:59:53] "GET /health HTTP/1.1" 200 -
+2025-09-29 11:59:53,251 [INFO] Incoming request from 1.2.3.4 GET http://127.0.0.1:8090/health
+2025-09-29 11:59:53,252 [INFO] 127.0.0.1 - - [29/Sep/2025 11:59:53] "GET /health HTTP/1.1" 200 -
+2025-09-29 11:59:53,354 [INFO] Incoming request from 1.2.3.4 GET http://127.0.0.1:8090/health
+2025-09-29 11:59:53,354 [INFO] 127.0.0.1 - - [29/Sep/2025 11:59:53] "GET /health HTTP/1.1" 200 -
+2025-09-29 11:59:53,458 [INFO] Incoming request from 1.2.3.4 GET http://127.0.0.1:8090/health
+2025-09-29 11:59:53,458 [INFO] 127.0.0.1 - - [29/Sep/2025 11:59:53] "GET /health HTTP/1.1" 200 -
+2025-09-29 11:59:53,561 [INFO] Incoming request from 1.2.3.4 GET http://127.0.0.1:8090/health
+2025-09-29 11:59:53,561 [INFO] 127.0.0.1 - - [29/Sep/2025 11:59:53] "GET /health HTTP/1.1" 200 -
+2025-09-29 12:03:32,484 [INFO] Incoming request from 127.0.0.1 GET http://127.0.0.1:8090/health
+2025-09-29 12:03:32,484 [INFO] 127.0.0.1 - - [29/Sep/2025 12:03:32] "GET /health HTTP/1.1" 200 -
+2025-09-29 12:03:32,484 [INFO] Incoming request from 127.0.0.1 GET http://127.0.0.1:8090/
+2025-09-29 12:03:32,484 [INFO] 127.0.0.1 - - [29/Sep/2025 12:03:32] "GET / HTTP/1.1" 200 -
+2025-09-29 12:03:32,499 [INFO] Incoming request from 127.0.0.1 POST http://127.0.0.1:8090/reload-config
+2025-09-29 12:03:32,499 [INFO] Config loaded. categories=15, blacklisted_ips=2, rate_limit=100/60s
+2025-09-29 12:03:32,499 [INFO] 127.0.0.1 - - [29/Sep/2025 12:03:32] "POST /reload-config HTTP/1.1" 200 -
+2025-09-29 12:03:32,499 [INFO] Incoming request from 127.0.0.1 GET http://127.0.0.1:8090/?q=<script>alert(1)</script>
+2025-09-29 12:03:32,499 [WARNING] Blocked request (query) ip=127.0.0.1 key=q category=xss value=<script>alert(1)</script>
+2025-09-29 12:03:32,499 [INFO] 127.0.0.1 - - [29/Sep/2025 12:03:32] "[31m[1mGET /?q=<script>alert(1)</script> HTTP/1.1[0m" 403 -
+2025-09-29 12:03:32,499 [INFO] Incoming request from 127.0.0.1 GET http://127.0.0.1:8090/?q=UNION%20SELECT
+2025-09-29 12:03:32,499 [WARNING] Blocked request (query) ip=127.0.0.1 key=q category=sql_injection value=UNION SELECT
+2025-09-29 12:03:32,499 [INFO] 127.0.0.1 - - [29/Sep/2025 12:03:32] "[31m[1mGET /?q=UNION%20SELECT HTTP/1.1[0m" 403 -
+2025-09-29 12:03:32,499 [INFO] Incoming request from 127.0.0.1 POST http://127.0.0.1:8090/submit
+2025-09-29 12:03:32,499 [WARNING] Blocked request (form) ip=127.0.0.1 key=comment category=xss value=<img src=x onerror=alert(1)>
+2025-09-29 12:03:32,499 [INFO] 127.0.0.1 - - [29/Sep/2025 12:03:32] "[31m[1mPOST /submit HTTP/1.1[0m" 403 -
+2025-09-29 12:03:32,514 [INFO] Incoming request from 127.0.0.1 GET http://127.0.0.1:8090/
+2025-09-29 12:03:32,514 [WARNING] Blocked request (header) ip=127.0.0.1 header=X-Test category=xss
+2025-09-29 12:03:32,514 [INFO] 127.0.0.1 - - [29/Sep/2025 12:03:32] "[31m[1mGET / HTTP/1.1[0m" 403 -
+2025-09-29 12:03:32,514 [INFO] Incoming request from 127.0.0.1 POST http://127.0.0.1:8090/api
+2025-09-29 12:03:32,514 [WARNING] Blocked request (body) ip=127.0.0.1 category=xss
+2025-09-29 12:03:32,514 [INFO] 127.0.0.1 - - [29/Sep/2025 12:03:32] "[31m[1mPOST /api HTTP/1.1[0m" 403 -
+2025-09-29 12:03:32,514 [INFO] Incoming request from 192.168.1.100 GET http://127.0.0.1:8090/health
+2025-09-29 12:03:32,514 [WARNING] Blocked blacklisted IP: 192.168.1.100
+2025-09-29 12:03:32,514 [INFO] 127.0.0.1 - - [29/Sep/2025 12:03:32] "[31m[1mGET /health HTTP/1.1[0m" 403 -
+2025-09-29 12:03:32,514 [INFO] Incoming request from 1.2.3.4 GET http://127.0.0.1:8090/health
+2025-09-29 12:03:32,514 [INFO] 127.0.0.1 - - [29/Sep/2025 12:03:32] "GET /health HTTP/1.1" 200 -
+2025-09-29 12:03:32,625 [INFO] Incoming request from 1.2.3.4 GET http://127.0.0.1:8090/health
+2025-09-29 12:03:32,625 [INFO] 127.0.0.1 - - [29/Sep/2025 12:03:32] "GET /health HTTP/1.1" 200 -
+2025-09-29 12:03:32,731 [INFO] Incoming request from 1.2.3.4 GET http://127.0.0.1:8090/health
+2025-09-29 12:03:32,731 [INFO] 127.0.0.1 - - [29/Sep/2025 12:03:32] "GET /health HTTP/1.1" 200 -
+2025-09-29 12:03:32,835 [INFO] Incoming request from 1.2.3.4 GET http://127.0.0.1:8090/health
+2025-09-29 12:03:32,835 [INFO] 127.0.0.1 - - [29/Sep/2025 12:03:32] "GET /health HTTP/1.1" 200 -
+2025-09-29 12:03:32,942 [INFO] Incoming request from 1.2.3.4 GET http://127.0.0.1:8090/health
+2025-09-29 12:03:32,942 [INFO] 127.0.0.1 - - [29/Sep/2025 12:03:32] "GET /health HTTP/1.1" 200 -
+2025-09-29 12:03:33,048 [INFO] Incoming request from 1.2.3.4 GET http://127.0.0.1:8090/health
+2025-09-29 12:03:33,048 [INFO] 127.0.0.1 - - [29/Sep/2025 12:03:33] "GET /health HTTP/1.1" 200 -
+2025-09-29 12:03:33,157 [INFO] Incoming request from 1.2.3.4 GET http://127.0.0.1:8090/health
+2025-09-29 12:03:33,159 [INFO] 127.0.0.1 - - [29/Sep/2025 12:03:33] "GET /health HTTP/1.1" 200 -
+2025-09-29 12:03:33,265 [INFO] Incoming request from 1.2.3.4 GET http://127.0.0.1:8090/health
+2025-09-29 12:03:33,265 [INFO] 127.0.0.1 - - [29/Sep/2025 12:03:33] "GET /health HTTP/1.1" 200 -
