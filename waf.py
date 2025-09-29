@@ -196,7 +196,7 @@ def waf_filter():
 
 @app.route("/", methods=["GET"])
 def index():
-    return jsonify({"status": "ok", "message": "Enterprise WAF is running"}), 200
+    return jsonify({"status": "ok", "message": "Welcome WAF is running"}), 200
 
 
 @app.route("/health", methods=["GET"])
