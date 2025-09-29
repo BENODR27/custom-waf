@@ -1,0 +1,14 @@
+
+[Unit]
+Description=Custom Python WAF Service
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /opt/waf/waf.py
+WorkingDirectory=/opt/waf
+Restart=always
+User=www-data
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target

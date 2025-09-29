@@ -1,0 +1,47 @@
+2025-09-29 09:23:31,557 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8090
+ * Running on http://192.168.22.115:8090
+2025-09-29 09:23:31,557 [33mPress CTRL+C to quit[0m
+2025-09-29 09:23:45,880 Blocked due to os_command_injection: localhost:8090
+2025-09-29 09:23:45,880 127.0.0.1 - - [29/Sep/2025 09:23:45] "[31m[1mGET / HTTP/1.1[0m" 403 -
+2025-09-29 09:23:46,128 Blocked due to os_command_injection: localhost:8090
+2025-09-29 09:23:46,130 127.0.0.1 - - [29/Sep/2025 09:23:46] "[31m[1mGET /favicon.ico HTTP/1.1[0m" 403 -
+2025-09-29 09:24:49,630 Blocked due to os_command_injection: localhost:8090
+2025-09-29 09:24:49,632 127.0.0.1 - - [29/Sep/2025 09:24:49] "[31m[1mGET / HTTP/1.1[0m" 403 -
+2025-09-29 09:24:49,891 Blocked due to os_command_injection: localhost:8090
+2025-09-29 09:24:49,891 127.0.0.1 - - [29/Sep/2025 09:24:49] "[31m[1mGET /favicon.ico HTTP/1.1[0m" 403 -
+2025-09-29 10:25:06,230 Blocked due to os_command_injection: localhost:8090
+2025-09-29 10:25:06,230 127.0.0.1 - - [29/Sep/2025 10:25:06] "[31m[1mGET / HTTP/1.1[0m" 403 -
+2025-09-29 10:25:06,481 Blocked due to os_command_injection: localhost:8090
+2025-09-29 10:25:06,481 127.0.0.1 - - [29/Sep/2025 10:25:06] "[31m[1mGET /favicon.ico HTTP/1.1[0m" 403 -
+2025-09-29 10:25:07,114 Blocked due to os_command_injection: localhost:8090
+2025-09-29 10:25:07,114 127.0.0.1 - - [29/Sep/2025 10:25:07] "[31m[1mGET / HTTP/1.1[0m" 403 -
+2025-09-29 10:25:07,446 Blocked due to os_command_injection: localhost:8090
+2025-09-29 10:25:07,446 127.0.0.1 - - [29/Sep/2025 10:25:07] "[31m[1mGET /favicon.ico HTTP/1.1[0m" 403 -
+2025-09-29 10:33:34,845 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8090
+ * Running on http://192.168.22.115:8090
+2025-09-29 10:33:34,845 [33mPress CTRL+C to quit[0m
+2025-09-29 10:33:38,085 IP: 127.0.0.1
+2025-09-29 10:33:38,085 Blocked due to os_command_injection: localhost:8090
+2025-09-29 10:33:38,085 127.0.0.1 - - [29/Sep/2025 10:33:38] "[31m[1mGET / HTTP/1.1[0m" 403 -
+2025-09-29 10:33:38,345 IP: 127.0.0.1
+2025-09-29 10:33:38,346 Blocked due to os_command_injection: localhost:8090
+2025-09-29 10:33:38,346 127.0.0.1 - - [29/Sep/2025 10:33:38] "[31m[1mGET /favicon.ico HTTP/1.1[0m" 403 -
+2025-09-29 10:33:38,787 IP: 127.0.0.1
+2025-09-29 10:33:38,787 Blocked due to os_command_injection: localhost:8090
+2025-09-29 10:33:38,787 127.0.0.1 - - [29/Sep/2025 10:33:38] "[31m[1mGET / HTTP/1.1[0m" 403 -
+2025-09-29 10:33:39,115 IP: 127.0.0.1
+2025-09-29 10:33:39,115 Blocked due to os_command_injection: localhost:8090
+2025-09-29 10:33:39,115 127.0.0.1 - - [29/Sep/2025 10:33:39] "[31m[1mGET /favicon.ico HTTP/1.1[0m" 403 -
+2025-09-29 10:34:17,966 IP: 192.168.22.115
+2025-09-29 10:34:17,966 Blocked due to os_command_injection: 192.168.22.115:8090
+2025-09-29 10:34:17,966 192.168.22.115 - - [29/Sep/2025 10:34:17] "[31m[1mGET / HTTP/1.1[0m" 403 -
+2025-09-29 10:34:18,002 IP: 192.168.22.115
+2025-09-29 10:34:18,002 Blocked due to os_command_injection: 192.168.22.115:8090
+2025-09-29 10:34:18,002 192.168.22.115 - - [29/Sep/2025 10:34:18] "[31m[1mGET /favicon.ico HTTP/1.1[0m" 403 -
+2025-09-29 10:35:50,849 IP: 192.168.22.115
+2025-09-29 10:35:50,849 Blocked due to os_command_injection: 192.168.22.115:8090
+2025-09-29 10:35:50,858 192.168.22.115 - - [29/Sep/2025 10:35:50] "[31m[1mGET /favicon.ico HTTP/1.1[0m" 403 -

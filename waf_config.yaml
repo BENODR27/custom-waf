@@ -1,0 +1,51 @@
+patterns:
+  sql_injection:
+    - "' OR '1'='1"
+    - "UNION SELECT"
+    - "SELECT .* FROM"
+  xss:
+    - "<script.*?>"
+    - "onerror="
+    - "javascript:"
+  code_injection:
+    - "eval\\("
+    - "exec\\("
+  os_command_injection:
+    - "&&"
+    - ";"
+    - "|"
+  crlf_injection:
+    - "%0d%0a"
+  ldap_injection:
+    - "(&(objectClass=*))"
+  xpath_injection:
+    - "count(//"
+  rce:
+    - "import os"
+    - "subprocess"
+  xxe:
+    - "<!DOCTYPE"
+    - "<!ENTITY"
+  ssrf:
+    - "http://127.0.0.1"
+    - "file://"
+  path_traversal:
+    - "\\.\\./"
+    - "/etc/passwd"
+  backdoor:
+    - "cmd="
+    - "shell="
+  bruteforce:
+    - "login_attempt"
+  http_flood:
+    - "massive_request"
+  bot_abuse:
+    - "User-Agent: python-requests"
+
+ip_blacklist:
+  - "192.168.1.100"
+  - "10.0.0.5"
+
+rate_limit:
+  limit: 100
+  window: 60
