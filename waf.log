@@ -8,3 +8,122 @@
 2025-09-29 14:27:19,142 [INFO] 127.0.0.1 - - [29/Sep/2025 14:27:19] "GET /health HTTP/1.1" 200 -
 2025-09-29 14:27:26,967 [INFO] Incoming request from 127.0.0.1 GET http://localhost:8090/
 2025-09-29 14:27:26,968 [INFO] 127.0.0.1 - - [29/Sep/2025 14:27:26] "GET / HTTP/1.1" 200 -
+2025-09-29 16:00:13,466 [INFO] Incoming request from 127.0.0.1 GET http://localhost:8090/
+2025-09-29 16:00:13,473 [INFO] 127.0.0.1 - - [29/Sep/2025 16:00:13] "GET / HTTP/1.1" 200 -
+2025-09-29 16:02:30,415 [INFO] Config loaded. categories=15, blacklisted_ips=2, rate_limit=100/60s, global_rate=1000/1.0s, concurrency=100
+2025-09-29 16:02:30,428 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8090
+ * Running on http://192.168.22.115:8090
+2025-09-29 16:02:30,428 [INFO] [33mPress CTRL+C to quit[0m
+2025-09-29 16:02:34,172 [INFO] Incoming request from 127.0.0.1 GET http://localhost:8090/
+2025-09-29 16:02:34,173 [INFO] 127.0.0.1 - - [29/Sep/2025 16:02:34] "GET / HTTP/1.1" 200 -
+2025-09-29 16:02:51,358 [INFO] Incoming request from 127.0.0.1 GET http://localhost:8090/?id=<script>
+2025-09-29 16:02:51,360 [INFO] 127.0.0.1 - - [29/Sep/2025 16:02:51] "GET /?id=<script> HTTP/1.1" 200 -
+2025-09-29 16:03:01,562 [INFO] Incoming request from 127.0.0.1 GET http://localhost:8090/?id=<script>alert("")<?script>
+2025-09-29 16:03:01,563 [INFO] 127.0.0.1 - - [29/Sep/2025 16:03:01] "GET /?id=<script>alert("")<?script> HTTP/1.1" 200 -
+2025-09-29 16:03:08,592 [INFO] Incoming request from 127.0.0.1 GET http://localhost:8090/?id="<script>alert("")<?script>"
+2025-09-29 16:03:08,592 [INFO] 127.0.0.1 - - [29/Sep/2025 16:03:08] "GET /?id="<script>alert("")<?script>" HTTP/1.1" 200 -
+2025-09-29 16:03:19,322 [INFO] Config loaded. categories=15, blacklisted_ips=2, rate_limit=100/60s
+2025-09-29 16:03:19,337 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8090
+ * Running on http://192.168.22.115:8090
+2025-09-29 16:03:19,337 [INFO] [33mPress CTRL+C to quit[0m
+2025-09-29 16:03:23,506 [INFO] Incoming request from 127.0.0.1 GET http://localhost:8090/?id="<script>alert("")<?script>"
+2025-09-29 16:03:23,507 [INFO] 127.0.0.1 - - [29/Sep/2025 16:03:23] "GET /?id="<script>alert("")<?script>" HTTP/1.1" 200 -
+2025-09-29 16:03:28,683 [INFO] Incoming request from 127.0.0.1 GET http://localhost:8090/?id="<script>alert("")</script>
+2025-09-29 16:03:28,683 [WARNING] Blocked request (query) ip=127.0.0.1 key=id category=xss value="<script>alert("")</script>
+2025-09-29 16:03:28,684 [INFO] 127.0.0.1 - - [29/Sep/2025 16:03:28] "[31m[1mGET /?id="<script>alert("")</script> HTTP/1.1[0m" 403 -
+2025-09-29 16:03:45,193 [INFO] Config loaded. categories=15, blacklisted_ips=2, rate_limit=100/60s, global_rate=1000/1.0s, concurrency=100
+2025-09-29 16:03:45,208 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8090
+ * Running on http://192.168.22.115:8090
+2025-09-29 16:03:45,208 [INFO] [33mPress CTRL+C to quit[0m
+2025-09-29 16:03:49,131 [INFO] Incoming request from 127.0.0.1 GET http://localhost:8090/?id="<script>alert("")</script>
+2025-09-29 16:03:49,132 [WARNING] Blocked request (query) ip=127.0.0.1 key=id category=xss value="<script>alert("")</script>
+2025-09-29 16:03:49,132 [WARNING] Banned IP 127.0.0.1 for 60 seconds (ban_count=1)
+2025-09-29 16:03:49,132 [INFO] 127.0.0.1 - - [29/Sep/2025 16:03:49] "[31m[1mGET /?id="<script>alert("")</script> HTTP/1.1[0m" 403 -
+2025-09-29 16:03:51,786 [INFO] Incoming request from 127.0.0.1 GET http://localhost:8090/?id="<script>alert("")</script>
+2025-09-29 16:03:51,786 [WARNING] Rejected request from banned IP 127.0.0.1
+2025-09-29 16:03:51,786 [INFO] 127.0.0.1 - - [29/Sep/2025 16:03:51] "[31m[1mGET /?id="<script>alert("")</script> HTTP/1.1[0m" 403 -
+2025-09-29 16:03:55,800 [INFO] Incoming request from 127.0.0.1 GET http://localhost:8090/?id="<script>alert("")</script>
+2025-09-29 16:03:55,800 [WARNING] Rejected request from banned IP 127.0.0.1
+2025-09-29 16:03:55,800 [INFO] 127.0.0.1 - - [29/Sep/2025 16:03:55] "[31m[1mGET /?id="<script>alert("")</script> HTTP/1.1[0m" 403 -
+2025-09-29 16:04:10,510 [INFO] Incoming request from 127.0.0.1 GET http://localhost:8090/?id="<script>alert("")</script>
+2025-09-29 16:04:10,510 [WARNING] Rejected request from banned IP 127.0.0.1
+2025-09-29 16:04:10,511 [INFO] 127.0.0.1 - - [29/Sep/2025 16:04:10] "[31m[1mGET /?id="<script>alert("")</script> HTTP/1.1[0m" 403 -
+2025-09-29 16:04:12,539 [INFO] Incoming request from 127.0.0.1 GET http://localhost:8090/
+2025-09-29 16:04:12,539 [WARNING] Rejected request from banned IP 127.0.0.1
+2025-09-29 16:04:12,539 [INFO] 127.0.0.1 - - [29/Sep/2025 16:04:12] "[31m[1mGET / HTTP/1.1[0m" 403 -
+2025-09-29 16:04:15,010 [INFO] Incoming request from 127.0.0.1 GET http://localhost:8090/?id="<script>alert("")</script>
+2025-09-29 16:04:15,011 [WARNING] Rejected request from banned IP 127.0.0.1
+2025-09-29 16:04:15,011 [INFO] 127.0.0.1 - - [29/Sep/2025 16:04:15] "[31m[1mGET /?id="<script>alert("")</script> HTTP/1.1[0m" 403 -
+2025-09-29 16:04:15,762 [INFO] Incoming request from 127.0.0.1 GET http://localhost:8090/?id="<script>alert("")</script>
+2025-09-29 16:04:15,762 [WARNING] Rejected request from banned IP 127.0.0.1
+2025-09-29 16:04:15,762 [INFO] 127.0.0.1 - - [29/Sep/2025 16:04:15] "[31m[1mGET /?id="<script>alert("")</script> HTTP/1.1[0m" 403 -
+2025-09-29 16:04:16,066 [INFO] Incoming request from 127.0.0.1 GET http://localhost:8090/?id="<script>alert("")</script>
+2025-09-29 16:04:16,066 [WARNING] Rejected request from banned IP 127.0.0.1
+2025-09-29 16:04:16,066 [INFO] 127.0.0.1 - - [29/Sep/2025 16:04:16] "[31m[1mGET /?id="<script>alert("")</script> HTTP/1.1[0m" 403 -
+2025-09-29 16:04:16,269 [INFO] Incoming request from 127.0.0.1 GET http://localhost:8090/?id="<script>alert("")</script>
+2025-09-29 16:04:16,269 [WARNING] Rejected request from banned IP 127.0.0.1
+2025-09-29 16:04:16,269 [INFO] 127.0.0.1 - - [29/Sep/2025 16:04:16] "[31m[1mGET /?id="<script>alert("")</script> HTTP/1.1[0m" 403 -
+2025-09-29 16:04:16,439 [INFO] Incoming request from 127.0.0.1 GET http://localhost:8090/?id="<script>alert("")</script>
+2025-09-29 16:04:16,439 [WARNING] Rejected request from banned IP 127.0.0.1
+2025-09-29 16:04:16,439 [INFO] 127.0.0.1 - - [29/Sep/2025 16:04:16] "[31m[1mGET /?id="<script>alert("")</script> HTTP/1.1[0m" 403 -
+2025-09-29 16:04:16,626 [INFO] Incoming request from 127.0.0.1 GET http://localhost:8090/?id="<script>alert("")</script>
+2025-09-29 16:04:16,626 [WARNING] Rejected request from banned IP 127.0.0.1
+2025-09-29 16:04:16,627 [INFO] 127.0.0.1 - - [29/Sep/2025 16:04:16] "[31m[1mGET /?id="<script>alert("")</script> HTTP/1.1[0m" 403 -
+2025-09-29 16:04:16,843 [INFO] Incoming request from 127.0.0.1 GET http://localhost:8090/?id="<script>alert("")</script>
+2025-09-29 16:04:16,843 [WARNING] Rejected request from banned IP 127.0.0.1
+2025-09-29 16:04:16,843 [INFO] 127.0.0.1 - - [29/Sep/2025 16:04:16] "[31m[1mGET /?id="<script>alert("")</script> HTTP/1.1[0m" 403 -
+2025-09-29 16:04:17,046 [INFO] Incoming request from 127.0.0.1 GET http://localhost:8090/?id="<script>alert("")</script>
+2025-09-29 16:04:17,046 [WARNING] Rejected request from banned IP 127.0.0.1
+2025-09-29 16:04:17,046 [INFO] 127.0.0.1 - - [29/Sep/2025 16:04:17] "[31m[1mGET /?id="<script>alert("")</script> HTTP/1.1[0m" 403 -
+2025-09-29 16:04:20,179 [INFO] Incoming request from 127.0.0.1 GET http://localhost:8090/
+2025-09-29 16:04:20,179 [WARNING] Rejected request from banned IP 127.0.0.1
+2025-09-29 16:04:20,179 [INFO] 127.0.0.1 - - [29/Sep/2025 16:04:20] "[31m[1mGET / HTTP/1.1[0m" 403 -
+2025-09-29 16:04:22,364 [INFO] Incoming request from 127.0.0.1 GET http://localhost:8090/?id="<script>alert("")</script>
+2025-09-29 16:04:22,364 [WARNING] Rejected request from banned IP 127.0.0.1
+2025-09-29 16:04:22,364 [INFO] 127.0.0.1 - - [29/Sep/2025 16:04:22] "[31m[1mGET /?id="<script>alert("")</script> HTTP/1.1[0m" 403 -
+2025-09-29 16:04:50,949 [INFO] Config loaded. categories=15, blacklisted_ips=2, rate_limit=100/60s, global_rate=1000/1.0s, concurrency=100
+2025-09-29 16:04:50,963 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8090
+ * Running on http://192.168.22.115:8090
+2025-09-29 16:04:50,963 [INFO] [33mPress CTRL+C to quit[0m
+2025-09-29 16:04:53,961 [INFO] Incoming request from 127.0.0.1 GET http://localhost:8090/?id="<script>alert("")</script>
+2025-09-29 16:04:53,961 [WARNING] Blocked request (query) ip=127.0.0.1 key=id category=xss value="<script>alert("")</script>
+2025-09-29 16:04:53,961 [WARNING] Banned IP 127.0.0.1 for 60 seconds (ban_count=1)
+2025-09-29 16:04:53,962 [INFO] 127.0.0.1 - - [29/Sep/2025 16:04:53] "[31m[1mGET /?id="<script>alert("")</script> HTTP/1.1[0m" 403 -
+2025-09-29 16:05:06,269 [INFO] Incoming request from 127.0.0.1 GET http://localhost:8090/?id="<script>alert("")</script>
+2025-09-29 16:05:06,270 [WARNING] Rejected request from banned IP 127.0.0.1
+2025-09-29 16:05:06,270 [INFO] 127.0.0.1 - - [29/Sep/2025 16:05:06] "[31m[1mGET /?id="<script>alert("")</script> HTTP/1.1[0m" 403 -
+2025-09-29 16:05:09,798 [INFO] Incoming request from 127.0.0.1 GET http://localhost:8090/
+2025-09-29 16:05:09,798 [WARNING] Rejected request from banned IP 127.0.0.1
+2025-09-29 16:05:09,798 [INFO] 127.0.0.1 - - [29/Sep/2025 16:05:09] "[31m[1mGET / HTTP/1.1[0m" 403 -
+2025-09-29 16:05:10,048 [INFO] Incoming request from 127.0.0.1 GET http://localhost:8090/
+2025-09-29 16:05:10,048 [WARNING] Rejected request from banned IP 127.0.0.1
+2025-09-29 16:05:10,048 [INFO] 127.0.0.1 - - [29/Sep/2025 16:05:10] "[31m[1mGET / HTTP/1.1[0m" 403 -
+2025-09-29 16:05:14,943 [INFO] Config loaded. categories=15, blacklisted_ips=2, rate_limit=100/60s, global_rate=1000/1.0s, concurrency=100
+2025-09-29 16:05:14,957 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8090
+ * Running on http://192.168.22.115:8090
+2025-09-29 16:05:14,957 [INFO] [33mPress CTRL+C to quit[0m
+2025-09-29 16:05:17,925 [INFO] Incoming request from 127.0.0.1 GET http://localhost:8090/
+2025-09-29 16:05:17,925 [INFO] 127.0.0.1 - - [29/Sep/2025 16:05:17] "GET / HTTP/1.1" 200 -
+2025-09-29 16:05:22,221 [INFO] Incoming request from 127.0.0.1 GET http://localhost:8090/?id="<script>alert("")</script>
+2025-09-29 16:05:22,221 [WARNING] Blocked request (query) ip=127.0.0.1 key=id category=xss value="<script>alert("")</script>
+2025-09-29 16:05:22,222 [WARNING] Banned IP 127.0.0.1 for 60 seconds (ban_count=1)
+2025-09-29 16:05:22,222 [INFO] 127.0.0.1 - - [29/Sep/2025 16:05:22] "[31m[1mGET /?id="<script>alert("")</script> HTTP/1.1[0m" 403 -
+2025-09-29 16:05:25,128 [INFO] Incoming request from 127.0.0.1 GET http://localhost:8090/?id="<script>alert("")</script>
+2025-09-29 16:05:25,128 [WARNING] Rejected request from banned IP 127.0.0.1
+2025-09-29 16:05:25,128 [INFO] 127.0.0.1 - - [29/Sep/2025 16:05:25] "[31m[1mGET /?id="<script>alert("")</script> HTTP/1.1[0m" 403 -
+2025-09-29 16:05:37,026 [INFO] Incoming request from 127.0.0.1 GET http://localhost:8090/
+2025-09-29 16:05:37,026 [WARNING] Rejected request from banned IP 127.0.0.1
+2025-09-29 16:05:37,026 [INFO] 127.0.0.1 - - [29/Sep/2025 16:05:37] "[31m[1mGET / HTTP/1.1[0m" 403 -
+2025-09-29 16:05:37,293 [INFO] Incoming request from 127.0.0.1 GET http://localhost:8090/
+2025-09-29 16:05:37,293 [WARNING] Rejected request from banned IP 127.0.0.1
+2025-09-29 16:05:37,293 [INFO] 127.0.0.1 - - [29/Sep/2025 16:05:37] "[31m[1mGET / HTTP/1.1[0m" 403 -
