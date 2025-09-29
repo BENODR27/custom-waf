@@ -7,13 +7,13 @@ A web application firewall helps protect web apps by filtering and monitoring HT
 Clone the project
 
 ```bash
-  git clone https://github.com/BENODR27/custom-waf.git
+  git clone https://github.com/BENODR27/IronBarrier.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd custom-waf
+  cd IronBarrier
 ```
 
 Install dependencies
